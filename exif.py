@@ -1,7 +1,6 @@
 import datetime
 import fractions
 import io
-import ipdb
 import math
 import piexif
 import piexif.helper

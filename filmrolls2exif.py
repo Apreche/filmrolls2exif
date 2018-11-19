@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import exif
-import ipdb
 import os
 import re
 
