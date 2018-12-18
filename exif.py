@@ -60,7 +60,7 @@ def apply_metadata(filename, roll, frame):
     exif_ifd = {
         piexif.ExifIFD.ISOSpeedRatings: int(roll['speed']),
         piexif.ExifIFD.LensModel: frame['lens'],
-        piexif.ExifIFD.ApertureValue: convert_float_to_rational(frame['aperture']),
+        piexif.ExifIFD.FNumber: convert_float_to_rational(frame['aperture']),
         piexif.ExifIFD.DateTimeOriginal: convert_date(frame['date']),
     }
 
