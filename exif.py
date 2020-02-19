@@ -59,10 +59,11 @@ def apply_metadata(filename, roll, frame):
 
     exif_ifd = {
         piexif.ExifIFD.ISOSpeedRatings: int(roll['speed']),
-        piexif.ExifIFD.LensModel: frame['lens'],
         piexif.ExifIFD.FNumber: convert_float_to_rational(frame['aperture']),
         piexif.ExifIFD.DateTimeOriginal: convert_date(frame['date']),
     }
+    if frame['lens']:
+        exif_ifd.update({piexif.ExifIFD.LensModel: frame['lens']})
 
     if frame['note']:
         comment = piexif.helper.UserComment.dump(frame['note'])
